@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-const totalTime = () => (
-    <div className="px-6 flex justify-center items-center">
-        <div className="bg-white shadow-lg flex flex-col sm:py-4 py-2 sm:px-10 px-2 text-center">
-            <h1 className="text-lg">Time survived</h1>
-            <span className="text-xl font-bold">00:32:10</span>
+import { Context } from '../../store/store';
+
+const parseTime = (time) => {
+    const hours = ('0' + Math.floor(time / 3600)).slice(-2);
+    const minutes = ('0' + Math.floor((time % 3600) / 60)).slice(-2);
+    const seconds = ('0' + Math.floor((time % 3600) % 60)).slice(-2);
+
+    return `${hours}:${minutes}:${seconds}`;
+};
+
+const totalTime = React.memo(() => {
+
+    const state = useContext(Context)[0];
+
+    return (
+        <div className="px-6 flex justify-center items-center">
+            <div className="bg-white shadow-lg flex flex-col sm:py-4 py-2 sm:px-10 px-2 text-center">
+                <h1 className="text-lg">Time survived</h1>
+                <span className="text-xl font-bold">{parseTime(state.time.total)}</span>
+            </div>
         </div>
-    </div>
-);
+    )
+});
 
 export default totalTime;
