@@ -8,6 +8,7 @@ import PlayButton from './components/playButton/PlayButton'
 import ResetButton from './components/resetButton/ResetButton'
 import ActionsTabs from './components/actionsTabs/ActionsTabs'
 import ActionGrid from './components/actionGrid/ActionGrid'
+import Notification from './components/ui/Notification'
 
 import Store from './store/store';
 import Loop from './components/loop/Loop';
@@ -36,6 +37,7 @@ function App() {
 					</main>
 				</div>
 				<Footer />
+				<Notification />
 			</div>
 		</Store>
 	);

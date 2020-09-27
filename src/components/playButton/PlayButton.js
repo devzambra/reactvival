@@ -18,7 +18,7 @@ const playButton = React.memo(() => {
     return (
         <div className="px-6 flex justify-center items-center">
             <button onClick={() => setPlayState() }>
-                <div className="bg-white shadow-lg flex flex-col sm:py-4 py-2 sm:px-10 px-2 justify-center items-center">
+                <div className="rounded bg-white shadow-lg flex flex-col sm:py-4 py-2 sm:px-10 px-2 justify-center items-center">
                     { state.isPlaying ? <PauseIcon className="sm:h-10 sm:w-10 h-6 w-6"/> : <PlayIcon className="sm:h-10 sm:w-10 h-6 w-6"/>}
                 </div>
             </button>

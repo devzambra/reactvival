@@ -1,5 +1,16 @@
 export const CRAFT_ACTIONS = [
-    { name: 'Wood Bed', effect: '+1 energy/minute', cost: 5, currency: 'resources' }
+    { 
+        name: 'Wood Bed', 
+        effect: '+1 energy/minute', 
+        cost: 5, 
+        currency: 'resources', 
+        action: (state, setState) => {
+            const updated = { ...state };
+            updated.inventory.push({amount: 1, stat: 'energy', max: false, type: 'single'})
+
+            setState(updated)
+        } 
+    }
 ];
 
 export const USE_ACTIONS = [

@@ -31,7 +31,8 @@ const initialState = {
     inventory: [],
     time: 0,
     isPlaying: false,
-    activeTab: 'craft'
+    activeTab: 'craft',
+    notifications: []
 };
 
 export const Context = React.createContext();
