@@ -30,7 +30,7 @@ const stats = React.memo(() => {
 			 { state.stats.resources } 
 			 </span>
 			<span className="flex items-center flex-col"><MoneyIcon className="sm:h-10 sm:w-10 h-6 w-6"/>
-			 { state.stats.money } $
+			 { state.stats.money.current } $
 			 </span>
 		</div>
 	)

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from './components/ui/header/Header';
 import Footer from './components/ui/footer/Footer';
@@ -13,6 +13,11 @@ import Store from './store/store';
 import Loop from './components/loop/Loop';
 
 function App() {
+
+	const [tabState, setTabState] = useState('craft');
+
+	const changeTab = (tab) => setTabState(tab)
+
 	return (
 		<Store>
 			<Loop />
@@ -26,8 +31,8 @@ function App() {
 							<TotalTime />
 							<PlayButton />
 						</div>
-						<ActionsTabs />
-						<ActionGrid />
+						<ActionsTabs tab={tabState} setTab={changeTab} />
+						<ActionGrid tab={tabState}/>
 					</main>
 				</div>
 				<Footer />

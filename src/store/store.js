@@ -4,28 +4,34 @@ const initialState = {
     stats: {
         health: {
             current: 10,
-            total: 10
+            total: 10,
+            time: 0
         },
         energy: {
             current: 50,
-            total: 50
+            total: 50,
+            time: 0
         },
         hunger: {
             current: 10,
-            total: 10
+            total: 10,
+            time: 0
         },
         thirst: {
             current: 10,
-            total: 10
+            total: 10,
+            time: 0
         },
         resources: 20,
-        money: 100
+        money: {
+            current: 100,
+            time: 0
+        }
     },
-    time: {
-        total: 0,
-        current: 0
-    },
-    isPlaying: false
+    inventory: [],
+    time: 0,
+    isPlaying: false,
+    activeTab: 'craft'
 };
 
 export const Context = React.createContext();

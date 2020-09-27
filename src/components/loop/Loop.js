@@ -9,15 +9,41 @@ const loop = React.memo(() => {
 
 	const updateTime = useCallback(() => {
 		const updatedState = {...state};
-		updatedState.time.total = updatedState.time.total + 1;
-        updatedState.time.current = updatedState.time.current + 1;
+        updatedState.time = updatedState.time + 1;
         
-        if (updatedState.time.current >= 5) {
-            updatedState.time.current = 0;
+        updatedState.stats.health.time = updatedState.stats.health.time + 1;
+        updatedState.stats.energy.time = updatedState.stats.energy.time + 1;
+        updatedState.stats.hunger.time = updatedState.stats.hunger.time + 1;
+        updatedState.stats.thirst.time = updatedState.stats.thirst.time + 1;
+        updatedState.stats.money.time = updatedState.stats.money.time + 1;
+        
+        if (updatedState.stats.health.time >= 60) {
+            updatedState.stats.health.time = 0;
             updatedState.stats.health.current -= 1;
         }
 
-		setState(updatedState);
+        if (updatedState.stats.energy.time >= 30) {
+            updatedState.stats.energy.time = 0;
+            updatedState.stats.energy.current -= 1;
+        }
+
+        if (updatedState.stats.hunger.time >= 120) {
+            updatedState.stats.hunger.time = 0;
+            updatedState.stats.hunger.current -= 1;
+        }
+
+        if (updatedState.stats.thirst.time >= 120) {
+            updatedState.stats.thirst.time = 0;
+            updatedState.stats.thirst.current -= 1;
+        }
+
+        if (updatedState.stats.money.time >= 60) {
+            updatedState.stats.money.time = 0;
+            updatedState.stats.money.current += 50;
+        }
+
+        setState(updatedState);
+        
 	}, [setState, state]);
 
     useEffect(() => {
