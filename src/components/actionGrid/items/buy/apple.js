@@ -1,6 +1,6 @@
-export const water = {
-	name: 'Water',
-	effect: '+1 Water',
+export const apple = {
+	name: 'Apple',
+	effect: '+1 Food',
 	cost: 50,
 	currency: 'money',
 	keep: true,
@@ -12,12 +12,12 @@ export const water = {
 				updated.inventory = [
 					...updated.inventory,
 					{
-						name: 'Water',
-						effect: '+1 Water',
+						name: 'Apple',
+						effect: '+1 Food',
 						action: (state, setState) => {
-							if (state.stats.thirst.current + 1 <= state.stats.thirst.total) {
+							if (state.stats.hunger.current + 1 <= state.stats.hunger.total) {
 								const newState = { ...state };
-								newState.stats.thirst.current += 1;
+								newState.stats.hunger.current += 1;
 
 								setState(newState);
 								return true;

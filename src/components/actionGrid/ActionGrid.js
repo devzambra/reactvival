@@ -54,8 +54,8 @@ const actionGrid = React.memo(({ tab }) => {
 					return (
 						<div
 							onClick={() => {
-								a.action(state, setState);
-								if (!a.keep) {
+								const result = a.action(state, setState);
+								if (!a.keep && result) {
 									actions.splice(index, 1);
 								}
 							}}
