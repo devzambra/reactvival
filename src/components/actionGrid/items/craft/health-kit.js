@@ -1,6 +1,6 @@
 export const healthKit = {
 	name: 'Health Kit',
-	effect: '+2 Health',
+	effect: '+5 Health',
 	cost: 50,
 	currency: 'resources',
 	keep: true,
@@ -12,11 +12,11 @@ export const healthKit = {
 					...updated.inventory,
 					{
 						name: 'Health Kit',
-						effect: '+2 Health',
+						effect: '+5 Health',
 						action: (state, setState) => {
-							if (state.stats.health.current + 2 <= state.stats.health.total) {
+							if (state.stats.health.current + 5 <= state.stats.health.total) {
 								const newState = { ...state };
-								newState.stats.health.current += 2;
+								newState.stats.health.current += 5;
 
 								setState(newState);
 								return true;

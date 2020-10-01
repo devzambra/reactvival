@@ -1,6 +1,6 @@
 export const apple = {
 	name: 'Apple',
-	effect: '+1 Food',
+	effect: '+2 Food',
 	cost: 50,
 	currency: 'money',
 	keep: true,
@@ -13,11 +13,11 @@ export const apple = {
 					...updated.inventory,
 					{
 						name: 'Apple',
-						effect: '+1 Food',
+						effect: '+2 Food',
 						action: (state, setState) => {
-							if (state.stats.hunger.current + 1 <= state.stats.hunger.total) {
+							if (state.stats.hunger.current + 2 <= state.stats.hunger.total) {
 								const newState = { ...state };
-								newState.stats.hunger.current += 1;
+								newState.stats.hunger.current += 2;
 
 								setState(newState);
 								return true;
@@ -28,7 +28,7 @@ export const apple = {
 				];
 				updated.stats = {
 					...updated.stats,
-					money: { ...updated.stats.money, current: updated.stats.money - 50 },
+					money: updated.stats.money - 50 ,
 				};
 
 				return updated;

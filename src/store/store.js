@@ -22,10 +22,9 @@ const initialState = {
 		money: 100,
 	},
 	inventory: [],
-	time: 0,
 	isPlaying: false,
 	activeTab: 'craft',
-	notifications: [],
+	endGame: false
 };
 
 export const Context = React.createContext();

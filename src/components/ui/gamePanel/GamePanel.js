@@ -1,16 +1,15 @@
-import React, { useContext } from 'react';
-import { Context } from '../../../store/store';
+import React from 'react';
+
 import { ReactComponent as PlayIcon } from '../../../assets/icons/controls/play.svg';
 
 import ActionsTabs from '../../actionsTabs/ActionsTabs';
 import ActionGrid from '../../actionGrid/ActionGrid';
 
-const gamePanel = React.memo(({ tabState, changeTab }) => {
-	const state = useContext(Context)[0];
+const gamePanel = React.memo(({ tabState, changeTab, isPlaying }) => {
 
 	return (
 		<div>
-			{state.isPlaying ? (
+			{isPlaying ? (
 				<>
 					<ActionsTabs tab={tabState} setTab={changeTab} />
 					<ActionGrid tab={tabState} />

@@ -18,12 +18,6 @@ export const woodenBed = {
 								const newState = { ...state };
 								newState.stats.energy.current += 5;
 
-								newState.notifications = [
-									...newState.notifications,
-									{ shown: false, text: 'Used: Wooden Bed', time: 0 },
-									{ shown: false, text: 'Energy +5', time: 0 },
-								];
-
 								setState(newState);
 								return true;
 							}
@@ -32,11 +26,6 @@ export const woodenBed = {
 					},
 				];
 				updated.stats = { ...updated.stats, resources: updated.stats.resources - 5 };
-				updated.notifications = [
-					...updated.notifications,
-					{ shown: false, text: 'Crafted: Wooden Bed', time: 0 },
-					{ shown: false, text: 'Resources -5', time: 0 },
-				];
 
 				return updated;
 			});
