@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Reactvival: The React survival game
 
-## Available Scripts
+Reactvival is a React web based game where you as the player try to survive as long as you can. To acomplish that, you can spend resources, money and energy to perform different actions and get items that will help you extend your survival time.
 
-In the project directory, you can run:
+## Instructions
 
-### `npm start`
+#### Stats
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You begin with the following stats:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* **Health**: 10 / 10
+* **Energy**: 50 / 50
+* **Food**: 10 / 10
+* **Water**: 10 / 10
+* **Resources**: 20
+* **Money**: 100
 
-### `npm test`
+If your **Health** reaches 0, you loose.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To avoid that, you can spend **Energy** to explore, **Resources** to craft or **Money** to buy items.
 
-### `npm run build`
+Then, you can use those items to get back **Resources**, **Energy**, **Money**, **Food** or **Water**.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Main loop
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Each **5 seconds** you loose **2 Energy**.
+* Each **20 seconds** you loose **1-3 Food** and **1-3 Water**
+    * If you have **0 Food**, you loose **1 Health**
+    * If you have **0 Water**, you loose **1 Health**
+* Each **30 seconds** you loose **1 Health** and you get **50 Money**
+* Each **60 seconds** you get **30 Resources** and **15 Energy**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### How to win
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You cannot win, but you can try  to survive the longest time possible. Give it a try!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Live version
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can find a live running version of this project in: [Reactvival](https://reactvival.devzambra.es)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

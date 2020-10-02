@@ -1,6 +1,6 @@
 export const forest = {
 	name: 'Explore Forest',
-	effect: '+15 resources',
+	effect: '+10 resources',
 	cost:10,
 	currency: 'energy',
 	keep: true,
@@ -11,7 +11,7 @@ export const forest = {
 
 				updated.stats = {
 					...updated.stats,
-					resources: updated.stats.resources + 15,
+					resources: updated.stats.resources + 10,
 					energy: { ...updated.stats.energy, current: updated.stats.energy.current - 10 },
 				};
 

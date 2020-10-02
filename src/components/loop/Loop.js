@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 
 import { Context } from '../../store/store';
+import { setHighScore } from '../../utils/highScore';
 
 import EndGame from '../ui/endGame'
 
@@ -15,6 +16,14 @@ const loop = React.memo(({time, isPlaying, setIsPlaying}) => {
 					...s,
 				};
 			
+				if (time % 60 === 0) {
+					updatedState.stats.resources = updatedState.stats.resources + 30;
+					updatedState.stats.energy = {
+						...updatedState.stats.energy,
+						current: updatedState.stats.energy.current + 15 <= updatedState.stats.energy.total ? updatedState.stats.energy.current + 15 : updatedState.stats.energy.total,
+					};
+				}
+
 				if (time % 30 === 0) {
 					if (updatedState.stats.health.current >= 1) {
 						updatedState.stats.health = {
@@ -72,6 +81,7 @@ const loop = React.memo(({time, isPlaying, setIsPlaying}) => {
 				}
 			
 				if (updatedState.stats.health.current === 0) {
+					setHighScore(time);
 					setIsPlaying(false);
 					updatedState.endGame = true;
 				}
