@@ -1,0 +1,21 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build & deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@master
+      - name: Install dependencies
+        run: npm install
+      - name: Build the app for production
+        run: npm run build
+      - name: Deploy the app to firebase
+        run: docker build -t deploy . --build-arg FIREBASE_TOKEN=${{ secrets.FIREBASE_TOKEN }}
