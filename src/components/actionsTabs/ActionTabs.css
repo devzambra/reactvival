@@ -1,0 +1,8 @@
+.tabLink span.active {
+    color: white;
+    border-color: #4299e1;
+    background-color: #4299e1;
+}
+.tabLink:hover span.active {
+    background-color: #2b6cb0;
+}
