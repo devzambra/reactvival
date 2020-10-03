@@ -27,8 +27,8 @@ Then, you can use those items to get back **Resources**, **Energy**, **Money**, 
 * Each **20 seconds** you loose **1-3 Food** and **1-3 Water**
     * If you have **0 Food**, you loose **1 Health**
     * If you have **0 Water**, you loose **1 Health**
-* Each **30 seconds** you loose **1 Health** and you get **50 Money**
-* Each **60 seconds** you get **30 Resources** and **15 Energy**
+* Each **30 seconds** you loose **1 Health** and you get **40 Money**
+* Each **60 seconds** you get **15 Resources** and **10 Energy**
 
 
 #### How to win
