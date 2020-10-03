@@ -17,10 +17,10 @@ const loop = React.memo(({time, isPlaying, setIsPlaying}) => {
 				};
 			
 				if (time % 60 === 0) {
-					updatedState.stats.resources = updatedState.stats.resources + 30;
+					updatedState.stats.resources = updatedState.stats.resources + 15;
 					updatedState.stats.energy = {
 						...updatedState.stats.energy,
-						current: updatedState.stats.energy.current + 15 <= updatedState.stats.energy.total ? updatedState.stats.energy.current + 15 : updatedState.stats.energy.total,
+						current: updatedState.stats.energy.current + 10 <= updatedState.stats.energy.total ? updatedState.stats.energy.current + 10 : updatedState.stats.energy.total,
 					};
 				}
 
@@ -32,7 +32,7 @@ const loop = React.memo(({time, isPlaying, setIsPlaying}) => {
 						};
 					}
 			
-					updatedState.stats.money = updatedState.stats.money + 50;
+					updatedState.stats.money = updatedState.stats.money + 40;
 				}
 			
 				if (time % 20 === 0) {
