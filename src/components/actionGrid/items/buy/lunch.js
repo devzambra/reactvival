@@ -1,11 +1,11 @@
 export const lunch = {
 	name: 'Lunch',
 	effect: '+3 Food / +3 Water',
-	cost: 100,
+	cost: 120,
 	currency: 'money',
 	keep: true,
 	action: (state, setState) => {
-		if (state.stats.money >= 100) {
+		if (state.stats.money >= 120) {
 			setState((s) => {
 				const updated = { ...s };
 
@@ -29,7 +29,7 @@ export const lunch = {
 				];
 				updated.stats = {
 					...updated.stats,
-					money: updated.stats.money - 100 ,
+					money: updated.stats.money - 120 ,
 				};
 
 				return updated;

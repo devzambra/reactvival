@@ -1,6 +1,6 @@
 export const woodenBed = {
 	name: 'Wooden Bed',
-	effect: '+5 energy',
+	effect: '+6 energy',
 	cost: 5,
 	currency: 'resources',
 	keep: true,
@@ -12,11 +12,11 @@ export const woodenBed = {
 					...updated.inventory,
 					{
 						name: 'Wooden Bed',
-						effect: '+5 energy',
+						effect: '+6 energy',
 						action: (state, setState) => {
-							if (state.stats.energy.current + 5 <= state.stats.energy.total) {
+							if (state.stats.energy.current + 6 <= state.stats.energy.total) {
 								const newState = { ...state };
-								newState.stats.energy.current += 5;
+								newState.stats.energy.current += 6;
 
 								setState(newState);
 								return true;
